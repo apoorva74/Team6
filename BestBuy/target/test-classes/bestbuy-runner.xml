@@ -19,8 +19,8 @@
             <class name="testBestBuy.TestAllCategories"/>
             <class name="testBestBuy.TestFeaturedItems"/>
             <class name="testBestBuy.TestCreateAccount"/>
-            <class name="dbTest.DBtest"/>
-            <class name="testJiraAPI.CreateIssue"/> -->
+            <class name="dbTest.DBtest"/> -->
+            <class name="testJiraAPI.CreateIssue"/>
 
         </classes>
     </test>
