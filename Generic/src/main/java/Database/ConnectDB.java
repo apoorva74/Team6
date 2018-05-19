@@ -19,14 +19,14 @@ public class ConnectDB {
     public static PreparedStatement ps = null;
     public static ResultSet resultSet = null;
 
-    public Properties loadProperties() throws IOException{
+    public static Properties loadProperties() throws IOException{
         Properties prop = new Properties();
-        InputStream ism = new FileInputStream("../Generic/databaseinfo/secret.properties");
+        InputStream ism = new FileInputStream("C:\\Users\\apoor\\IdeaProjects\\NewWebAutomationTeam6\\Generic\\src\\main\\java\\databaseinfo\\secret.properties");
         prop.load(ism);
         ism.close();
         return prop;
     }
-    public Connection connectToMySql() throws IOException, SQLException, ClassNotFoundException {
+    public static Connection connectToMySql() throws IOException, SQLException, ClassNotFoundException {
         Properties prop = loadProperties();
         String driverClass = prop.getProperty("MYSQLJDBC.driver");
         String url = prop.getProperty("MYSQLJDBC.url");
@@ -44,7 +44,7 @@ public class ConnectDB {
 
         return mongoDatabase;
     }
-    public List<String> readDataBase(String tableName, String columnName)throws Exception{
+    public static List<String> readDataBase(String tableName, String columnName)throws Exception{
         List<String> data = new ArrayList<String>();
 
         try {
@@ -59,7 +59,7 @@ public class ConnectDB {
         }
         return data;
     }
-    private void close() {
+    private static void close() {
         try{
             if(resultSet != null){
                 resultSet.close();
@@ -74,7 +74,7 @@ public class ConnectDB {
 
         }
     }
-    private List<String> getResultSetData(ResultSet resultSet2, String columnName) throws SQLException {
+    private static List<String> getResultSetData(ResultSet resultSet2, String columnName) throws SQLException {
         List<String> dataList = new ArrayList<String>();
         while(resultSet.next()){
             String itemName = resultSet.getString(columnName);
@@ -104,7 +104,7 @@ public class ConnectDB {
             e.printStackTrace();
         }
     }
-    public void insertDataFromStringToMySql(String ArrayData,String tableName, String columnName)
+    public static void insertDataFromStringToMySql(String ArrayData, String tableName, String columnName)
     {
         try {
             connectToMySql();

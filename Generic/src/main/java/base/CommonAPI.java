@@ -38,8 +38,8 @@ import java.util.concurrent.TimeUnit;
 
 public class CommonAPI {
     public WebDriver driver = null;
-    public String browserstack_username= "your user name";
-    public String browserstack_accesskey = "your access key";
+    public String browserstack_username= "bsuser44721";
+    public String browserstack_accesskey = "ATAzf66BXpsoN8Pbcxrv";
     public String saucelabs_username = "";
     public String saucelabs_accesskey = "";
 
@@ -104,9 +104,9 @@ public class CommonAPI {
     }
     @Parameters({"useCloudEnv","cloudEnvName","os","os_version","browserName","browserVersion","url"})
     @BeforeMethod
-    public void setUp(boolean useCloudEnv,String cloudEnvName,
-                      String os,String os_version, String browserName,
-                              String browserVersion, String url)throws IOException {
+    public void setUp(@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,
+                      @Optional("OS X") String os,@Optional("10") String os_version, @Optional("chrome-options") String browserName, @Optional("34")
+                                  String browserVersion, @Optional("http://www.bestbuy.com") String url)throws IOException {
         if(useCloudEnv==true){
             if(cloudEnvName.equalsIgnoreCase("browserstack")) {
                 getCloudDriver(cloudEnvName,browserstack_username,browserstack_accesskey,os,os_version, browserName, browserVersion);
@@ -229,6 +229,21 @@ public class CommonAPI {
         String st = driver.findElement(By.xpath(locator)).getText();
         return st;
     }
+
+    public void findXpath(String locator){
+        driver.findElement(By.xpath(locator));
+    }
+
+    public WebElement findcss(String locator){
+        driver.findElement(By.cssSelector(locator));
+        return null;
+    }
+
+    public String getTextByCSS(String locator){
+        String st = driver.findElement(By.cssSelector(locator)).getText();
+        return st;
+    }
+
     public void mouseHoverByXpath(String locator){
         try {
             WebElement element = driver.findElement(By.xpath(locator));
@@ -250,7 +265,7 @@ public class CommonAPI {
     public List<String> getTextFromWebElements(String locator){
         List<WebElement> element = new ArrayList<WebElement>();
         List<String> text = new ArrayList<String>();
-        element = driver.findElements(By.cssSelector(locator));
+        element = driver.findElements(By.xpath(locator));
         for(WebElement web:element){
             String st = web.getText();
             text.add(st);
@@ -380,4 +395,24 @@ public class CommonAPI {
         boolean value = driver1.findElement(By.cssSelector(locator)).isDisplayed();
         return value;
     }
+
+
+        public void scrollDown() {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,500)");
+        }
+
+        public void scrollUp() {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("window.scrollBy(0,-500)");
+        }
+
+        public void sleep() {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [BetsBuy Automation Script ]">
+  <parameter name="useCloudEnv" value="false"/>
+  <parameter name="os" value="windows"/>
+  <parameter name="os_version" value="Sierra"/>
+  <parameter name="browserVersion" value="53.0"/>
+  <parameter name="browserName" value="chrome"/>
+  <parameter name="cloudEnvName" value="browserstack"/>
+  <parameter name="url" value="https://www.bestbuy.com"/>
+  <test thread-count="5" verbose="0" name="BestBuy(failed)">
+    <classes>
+      <class name="testBestBuy.TestCreateAccount">
+        <methods>
+          <include name="afterEachTestMethod"/>
+          <include name="afterClass"/>
+          <include name="generateReport"/>
+          <include name="extentSetup"/>
+          <include name="setUp"/>
+          <include name="afterMethod"/>
+          <include name="startExtent"/>
+          <include name="testAccount"/>
+        </methods>
+      </class> <!-- testBestBuy.TestCreateAccount -->
+    </classes>
+  </test> <!-- BestBuy(failed) -->
+</suite> <!-- Failed suite [BetsBuy Automation Script ] -->

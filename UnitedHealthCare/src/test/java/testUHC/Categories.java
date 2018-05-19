@@ -1,12 +1,12 @@
 package testUHC;
 
-import mainAmazon.CategoriesDropDown;
+import mainUHC.CategoriesDropDown;
 import org.testng.annotations.Test;
 
 public class Categories extends CategoriesDropDown {
 
-    @Test
+  /*  @Test
     public void dropdownOfCategories(){
         mainCategoriesdrop();
-    }
+    } */
 }

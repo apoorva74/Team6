@@ -1,6 +1,7 @@
 reporting\ExtentManager.class
 utility\Xls_Reader.class
 reporting\ExtentTestManager.class
+commonsEmail\CommonsEmail.class
 reporting\ApplicationLog.class
 reporting\TestLogger.class
 Database\ConnectDB.class

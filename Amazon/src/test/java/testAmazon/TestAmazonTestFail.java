@@ -5,8 +5,8 @@ import org.testng.annotations.Test;
 
 public class TestAmazonTestFail extends AmazonTestFail {
 
-    @Test
-    public void amazonFailTestOnPurpose(){
+   // @Test
+   /* public void amazonFailTestOnPurpose(){
         failTestOnPurpose();
-    }
+    } */
 }

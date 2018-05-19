@@ -1,12 +1,12 @@
 package testFacebook;
 
-import mainAmazon.CategoriesDropDown;
+import mainFacebook.CategoriesDropDown;
 import org.testng.annotations.Test;
 
 public class Categories extends CategoriesDropDown {
 
-    @Test
+   /*
     public void dropdownOfCategories(){
         mainCategoriesdrop();
-    }
+    } */
 }

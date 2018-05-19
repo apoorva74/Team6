@@ -3,17 +3,25 @@
 
 <suite name="BetsBuy Automation Script " parallel="false">
 
-    <parameter name="useCloudEnv" value="false"/>
+    <parameter name="useCloudEnv" value="true"/>
     <parameter name="cloudEnvName" value="browserstack"/>
     <parameter name="os" value="windows"/>
     <parameter name="os_version" value="Sierra"/>
     <parameter name="browserName" value="chrome"/>
     <parameter name="browserVersion" value="53.0"/>
-    <parameter name="url" value="https://www.amazon.com"/>
+    <parameter name="url" value="https://www.bestbuy.com"/>
 
     <test name = "BestBuy">
         <classes>
-<!--            <class name="testBestBuy.LoginBestBuy"/>-->
+
+        <!--    <class name="testBestBuy.TestPopUpWindow"/>
+            <class name="testBestBuy.TestHomePage"/>
+            <class name="testBestBuy.TestAllCategories"/>
+            <class name="testBestBuy.TestFeaturedItems"/>
+            <class name="testBestBuy.TestCreateAccount"/>
+            <class name="dbTest.DBtest"/>
+            <class name="testJiraAPI.CreateIssue"/> -->
+
         </classes>
     </test>
 </suite>

@@ -1,12 +1,12 @@
 package testChase;
 
-import mainAmazon.CategoriesDropDown;
+import mainChase.CategoriesDropDown;
 import org.testng.annotations.Test;
 
 public class Categories extends CategoriesDropDown {
 
-    @Test
+    /*
     public void dropdownOfCategories(){
         mainCategoriesdrop();
-    }
+    } */
 }
